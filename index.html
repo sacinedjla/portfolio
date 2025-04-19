@@ -1,230 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Najlaa | Portfolio</title>
-  <style>
-    body, h1, h2, p, ul, li {
-      margin: 0;
-      padding: 0;
-    }
+<head id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Najlaa | Portfolio</title>
+    <link rel="icon" type="image/png" href="N.png" />
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: #e0e0e0;
-      line-height: 1.6;
-    }
+    <style>
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
 
-    nav {
-      background-color: #1e1e1e;
-      padding: 1rem 2rem;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 100;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-    }
-    nav ul li {
-      margin: 0 15px;
-    }
-    nav ul li a {
-      color: #e0e0e0;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #64b5f6;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
 
-    main {
-      margin-top: 80px;
-    }
+        nav {
+            background-color: #1e1e1e;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
 
-    section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
 
-    h2 {
-      color: #ffffff;
-      margin-bottom: 1rem;
-    }
+        nav ul li {
+            margin: 0 15px;
+        }
 
-    .projects, .contact {
-      background-color: #1e1e1e;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-    }
+        nav ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
 
-    .contact a {
-      display: block;
-      color: #90caf9;
-      margin: 0.5rem 0;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
+        nav ul li a:hover {
+            color: #64b5f6;
+        }
 
-    .contact a:hover {
-      color: #64b5f6;
-    }
+        main {
+            margin-top: 80px;
+        }
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #1e1e1e;
-      color: #aaa;
-    }
+        section {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+        }
 
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
+        h2 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
 
-    /* About Section Styles - Dark Mode */
-    #about {
-      background-color: #1e1e1e;
-      padding: 3rem 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-    }
+        .projects, .contact {
+            background-color: #1e1e1e;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+        }
 
-    .about-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 900px;
-      margin: auto;
-      flex-wrap: wrap;
-    }
+        .contact a {
+            display: block;
+            color: #90caf9;
+            margin: 0.5rem 0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-    .about-text {
-      flex: 1;
-      padding-right: 2rem;
-    }
+        .contact a:hover {
+            color: #64b5f6;
+        }
 
-    .about-text p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #e0e0e0;
-      margin-bottom: 1rem;
-    }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #1e1e1e;
+            color: #aaa;
+        }
 
-    .about-text p strong {
-      color: #64b5f6;
-    }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
 
-    .about-image img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #64b5f6;
-      box-shadow: 0 0 10px rgba(100, 181, 246, 0.4);
-    }
+        /* About Section Styles - Dark Mode */
+        #about {
+            background-color: #1e1e1e;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
 
-    .about-text p:hover {
-      color: #90caf9;
-      transition: color 0.3s;
-    }
+        #about.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-    /* Skills List */
-    #skills ul {
-      list-style: none;
-      padding: 0;
-    }
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: auto;
+            flex-wrap: wrap;
+        }
 
-    #skills ul li {
-      margin-bottom: 0.5rem;
-      padding-left: 1rem;
-      position: relative;
-    }
+        .about-text {
+            flex: 1;
+            padding-right: 2rem;
+        }
 
-    #skills ul li::before {
-      content: "★";
-      color: #64b5f6;
-      position: absolute;
-      left: 0;
-    }
-  </style>
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p strong {
+            color: #64b5f6;
+        }
+
+        .about-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #64b5f6;
+            box-shadow: 0 0 10px rgba(100, 181, 246, 0.4);
+        }
+
+        .about-text p:hover {
+            color: #90caf9;
+            transition: color 0.3s;
+        }
+
+        /* Skills List */
+        #skills ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #skills ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        #skills ul li::before {
+            color: #64b5f6;
+            position: absolute;
+            left: 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background-color: #2a2a2a;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            color: #64b5f6;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .contact-item a {
+            color: #90caf9;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .contact-item:hover {
+            background-color: #3a3a3a;
+        }
+
+        .contact-item a:hover {
+            color: #64b5f6;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-card {
+            background-color: #1e1e1e;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(100, 181, 246, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.5rem;
+            color: #64b5f6;
+        }
+
+        .project-card p {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .project-card a {
+            color: #90caf9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-card a:hover {
+            color: #64b5f6;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(100, 181, 246, 0.3);
+        }
+
+        /* Scroll to Top Button */
+        #scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #64b5f6;
+            color: white;
+            padding: 1rem;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            display: none;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        #scroll-to-top.show {
+            display: block;
+        }
+        /* Skills */
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills ul li {
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+}
+
+.skill-bar-container {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    width: 100%;
+    height: 20px;
+    margin: 0.5rem 0;
+    position: relative;
+}
+
+.skill-bar {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.python {
+    background-color: #4386bd; /* Blue */
+}
+
+.java {
+    background-color: #b16e0a; /* Orange */
+}
+
+.html-css {
+    background-color: #17c71d; /* Green */
+}
+
+.ml {
+    background-color: #ac156d; /* Red */
+}
+
+.percentage {
+    position: absolute;
+    top: -25px;
+    right: 0;
+    color: #e0e0e0;
+    font-weight: bold;
+}
+
+    </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content -->
+    <main>
+        <!-- About Me -->
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                  <p>Hi, I'm <strong>Najlaa</strong>, a passionate computer science master's student from Algeria, currently specializing in <strong>Artificial Intelligence</strong>. I am deeply interested in creating innovative and impactful solutions in the fields of <strong>robotics</strong>, <strong>embedded systems</strong>, and <strong>assistive technologies</strong>.</p>
+                  <p>My mission is to build technologies that are accessible, practical, and meaningful to people. Whether it’s through my work on AI-driven projects or designing systems that can assist individuals with disabilities, I am always looking for ways to make a positive difference in people's lives.</p>
+                  <p>I'm always learning, exploring new technologies, and challenging myself to think outside the box. Join me in my journey as I create solutions that blend technology and humanity!</p>
+                </div>
+                <div class="about-image">
+                    <img src="mee.jpg" alt="Najlaa's Photo" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>🤖 Smart Glove Translator</h3>
+                    <p>A wearable device that translates sign language into speech using flex sensors and AI voice cloning.</p>
+                    <a href="https://github.com/nedjlasaci/smart-glove" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <h3>📱 Quran AI Tutor</h3>
+                    <p>A mobile app that helps users improve Quran recitation with AI feedback and personalized learning paths.</p>
+                    <a href="https://github.com/nedjlasaci/quran-ai-tutor" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <h3>🧠 AI Path Finder</h3>
+                    <p>Path planning simulation for robots using evolutionary algorithms and real-world maps.</p>
+                    <a href="https://github.com/nedjlasaci/ai-pathfinder" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+
+      <!-- Skills -->
+<section id="skills">
+    <h2>Skills</h2>
     <ul>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact Me</a></li>
+        <li>
+            <span>Python</span>
+            <div class="skill-bar-container">
+                <div class="skill-bar python" style="width: 90%;"></div>
+            </div>
+            <span class="percentage">90%</span>
+        </li>
+        <li>
+            <span>Java</span>
+            <div class="skill-bar-container">
+                <div class="skill-bar java" style="width: 75%;"></div>
+            </div>
+            <span class="percentage">75%</span>
+        </li>
+        <li>
+            <span>HTML/CSS</span>
+            <div class="skill-bar-container">
+                <div class="skill-bar html-css" style="width: 85%;"></div>
+            </div>
+            <span class="percentage">85%</span>
+        </li>
+        <li>
+            <span>Machine Learning</span>
+            <div class="skill-bar-container">
+                <div class="skill-bar ml" style="width: 70%;"></div>
+            </div>
+            <span class="percentage">70%</span>
+        </li>
     </ul>
-  </nav>
+</section>
 
-  <!-- Main content -->
-  <main>
-    <!-- About Me -->
-    <section id="about">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p>Hi, I'm <strong>Najlaa</strong>, a passionate computer science master's student from Algeria, currently specializing in <strong>Artificial Intelligence</strong>. I am deeply interested in creating innovative and impactful solutions in the fields of <strong>robotics</strong>, <strong>embedded systems</strong>, and <strong>assistive technologies</strong>.</p>
-          <p>My mission is to build technologies that are accessible, practical, and meaningful to people. Whether it’s through my work on AI-driven projects or designing systems that can assist individuals with disabilities, I am always looking for ways to make a positive difference in people's lives.</p>
-          <p>I'm always learning, exploring new technologies, and challenging myself to think outside the box. Join me in my journey as I create solutions that blend technology and humanity!</p>
-        </div>
-        <div class="about-image">
-          <img src="mee.jpg" alt="Najlaa's Photo" />
-        </div>
-      </div>
-    </section>
 
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="projects">
-        <h3>🚧 This section is under construction. Stay tuned for upcoming projects!</h3>
-        <div class="project-item">
-          <h4>Project Title</h4>
-          <p>Short description of the project.</p>
-          <a href="https://github.com/YOUR_PROJECT" target="_blank">View on GitHub</a>
-        </div>
-      </div>
-    </section>
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:nedjla.saci@univ-skikda.dz">nedjla.saci@univ-skikda.dz</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/nedjlasaci" target="_blank">github.com/nedjlasaci</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/nedjla-saci-80121a296" target="_blank">linkedin.com/in/nedjla-saci</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <!-- Skills -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Programming: Python, Java, C/C++, JavaScript</li>
-        <li>AI & Data Science: scikit-learn, TensorFlow, pandas</li>
-        <li>Hardware: Arduino, Flex Sensors, Raspberry Pi</li>
-        <li>Tools: Git, GitHub, VS Code, Jupyter</li>
-      </ul>
-    </section>
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+        ↑
+    </button>
 
-    <!-- Contact -->
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <div class="contact">
-        <a href="mailto:nedjla.saci@univ-skikda.dz">📧 nedjla.saci@univ-skikda.dz</a>
-        <a href="https://github.com/nedjlasaci" target="_blank">💻 GitHub Profile</a>
-        <a href="https://www.linkedin.com/in/nedjla-saci-80121a296" target="_blank">🔗 LinkedIn profile</a>
-      </div>
-    </section>
-  </main>
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ by Najlaa</p>
+    </footer>
 
-  <!-- Footer -->
-  <footer>
-    <p>Made with ❤️ by Najlaa</p>
-  </footer>
+    <script>
+        // Scroll to Top Button Visibility
+        window.onscroll = function() {
+            const button = document.getElementById("scroll-to-top");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                button.classList.add("show");
+            } else {
+                button.classList.remove("show");
+            }
+
+            // Adding scroll animations
+            const aboutSection = document.getElementById("about");
+            if (window.scrollY > aboutSection.offsetTop - window.innerHeight + 150) {
+                aboutSection.classList.add("show");
+            }
+        }
+    
+
+    </script>
+    <script>
+  
+</script>
+
 </body>
 </html>
