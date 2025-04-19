@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Najlaa | Portfolio</title>
+  <style>
+    body, h1, h2, p, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: #1e1e1e;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #64b5f6;
+    }
+
+    main {
+      margin-top: 80px;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .projects, .contact {
+      background-color: #1e1e1e;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .contact a {
+      display: block;
+      color: #90caf9;
+      margin: 0.5rem 0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact a:hover {
+      color: #64b5f6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1e1e1e;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* About Section Styles - Dark Mode */
+    #about {
+      background-color: #1e1e1e;
+      padding: 3rem 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+
+    .about-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: auto;
+      flex-wrap: wrap;
+    }
+
+    .about-text {
+      flex: 1;
+      padding-right: 2rem;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #e0e0e0;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p strong {
+      color: #64b5f6;
+    }
+
+    .about-image img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #64b5f6;
+      box-shadow: 0 0 10px rgba(100, 181, 246, 0.4);
+    }
+
+    .about-text p:hover {
+      color: #90caf9;
+      transition: color 0.3s;
+    }
+
+    /* Skills List */
+    #skills ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #skills ul li {
+      margin-bottom: 0.5rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    #skills ul li::before {
+      content: "★";
+      color: #64b5f6;
+      position: absolute;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact Me</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main content -->
+  <main>
+    <!-- About Me -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Hi, I'm <strong>Najlaa</strong>, a passionate computer science master's student from Algeria, currently specializing in <strong>Artificial Intelligence</strong>. I am deeply interested in creating innovative and impactful solutions in the fields of <strong>robotics</strong>, <strong>embedded systems</strong>, and <strong>assistive technologies</strong>.</p>
+          <p>My mission is to build technologies that are accessible, practical, and meaningful to people. Whether it’s through my work on AI-driven projects or designing systems that can assist individuals with disabilities, I am always looking for ways to make a positive difference in people's lives.</p>
+          <p>I'm always learning, exploring new technologies, and challenging myself to think outside the box. Join me in my journey as I create solutions that blend technology and humanity!</p>
+        </div>
+        <div class="about-image">
+          <img src="mee.jpg" alt="Najlaa's Photo" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <h3>🚧 This section is under construction. Stay tuned for upcoming projects!</h3>
+        <div class="project-item">
+          <h4>Project Title</h4>
+          <p>Short description of the project.</p>
+          <a href="https://github.com/YOUR_PROJECT" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Programming: Python, Java, C/C++, JavaScript</li>
+        <li>AI & Data Science: scikit-learn, TensorFlow, pandas</li>
+        <li>Hardware: Arduino, Flex Sensors, Raspberry Pi</li>
+        <li>Tools: Git, GitHub, VS Code, Jupyter</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <div class="contact">
+        <a href="mailto:nedjla.saci@univ-skikda.dz">📧 nedjla.saci@univ-skikda.dz</a>
+        <a href="https://github.com/nedjlasaci" target="_blank">💻 GitHub Profile</a>
+        <a href="https://www.linkedin.com/in/nedjla-saci-80121a296" target="_blank">🔗 LinkedIn profile</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with ❤️ by Najlaa</p>
+  </footer>
+</body>
+</html>
